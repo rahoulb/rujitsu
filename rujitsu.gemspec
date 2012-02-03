@@ -2,10 +2,10 @@
 
 Gem::Specification.new do |s|
   s.name = %q{rujitsu}
-  s.version = "0.3.3"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Brightbox Systems Ltd"]
+  s.authors = ["Brightbox Systems Ltd", "Caius Durling", "Rahoul Baruah"]
   s.date = %q{2010-06-03}
   s.description = %q{Various helper methods to smooth over Ruby development}
   s.email = %q{hello@brightbox.co.uk}
