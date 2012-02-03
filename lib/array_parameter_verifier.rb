@@ -1,4 +1,3 @@
-# EXTRACT ME INTO RUJITSU
 
 module ArrayParameterVerifier
   def must_be_keys_in parameters
