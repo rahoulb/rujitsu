@@ -4,7 +4,9 @@ A ruby gem with various helper methods to smooth out your Ruby development.
 
 == Install
 
-  gem install brightbox-rujitsu --source http://gems.github.com
+Add the following to your Gemfile
+
+  gem 'rujitsu', :git => 'git@github.com:rahoulb/rujitsu.git'
   
 == Including
 
@@ -18,14 +20,6 @@ For using in irb, there's a nice shortcut for you to use:
 (This works because <tt>-r</tt> is the argument to require a file, and both 'ubygems.rb' and 'ujitsu.rb' exist.)
 
 === Rails
-
-To require in rails 2.2, add the following to your <tt>environment.rb</tt> file.
-
-  config.gem "rujitsu"
-
-If you use RSpec you might want to add the following to your <tt>environments/test.rb</tt>:
-
-  config.gem "rujitsu", :lib => "rujitsu/grammar"
 
 == Documentation
 
@@ -70,6 +64,25 @@ As Rubyists we are all familiar with using include? to test if our variable is o
 However, it doesn't read correctly.  Rujitsu allows you to write the following as it reads much more like English.  
 
   if @my_value.in? ['hello', 'world'] ... 
+
+
+=== Testing for mandatory parameters
+
+We like named parameters.  They are good.  But, unlike Smalltalk, they don't form part of the method signature, so if you pass them in as a Hash, you need to test that the parameters you expect have been supplied.  Like this ...
+
+  def my_method parameters = {}
+    parameters.must_have_keys_for :this, :that, :the_other
+  end
+
+This will raise an `ArgumentError` if parameters does not contain the given keys.  
+
+There's also: 
+
+  def my_method parameters = {}
+    parameters.must_have_values_for :this, :that, :the_other
+  end
+
+This will raise an `ArgumentError` if any of the supplied keys have a nil value associated with them.  
 
 === Grammar
 
