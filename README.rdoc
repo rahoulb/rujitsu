@@ -6,7 +6,7 @@ A ruby gem with various helper methods to smooth out your Ruby development.
 
 Add the following to your Gemfile
 
-  gem 'rujitsu', :git => 'git@github.com:rahoulb/rujitsu.git'
+  gem 'rujitsu'
   
 == Including
 
